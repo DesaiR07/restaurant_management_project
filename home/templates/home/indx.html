@@ -9,6 +9,16 @@
 <p style="font-size:18px; color:#555; margin-bottom:30px;"></p>
 <p>We are glad to serve you the best food in town!</p>
 
+<h2 style="margin-bottom:30px; color:#2c3e50;">Our Menu</h2>
+<div style="display:flex; flex-wrap:wrap; gap:20px; justify-content:center; margin-top:20px;">
+    {%for item in menu_items%}
+    <div style="display:flex; flex-wrap:wrap; gap:20px; justify-content:center;margin-top:20px;box-shadow:0 2px 6px rgba(0,0,0,0.1);">
+        <h3>{{item.name}}</h3>
+        <p>Price:{{item.price}}</p>
+    </div>
+    {% endfor %}
+</div>
+
 <div style="display:flex; flex-wrap:wrap; gap:20px; justify-content:center;">
     <div style="background:#fff; border-radius:12px; padding:20px; width:250px; box-shadow:0 4px 12px rgba(0,0,0,0.1)">
         <h3>Orders</h3>
