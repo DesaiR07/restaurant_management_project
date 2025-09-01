@@ -10,6 +10,13 @@ def home(request):
     Restaurant.objects.first()
     context={
         "restaurant_name":
-        restaurant_name if restaurant else "Our Restaurant"
+        restaurant_name if restaurant else "Our Restaurant",
+        #Hardcoded menu items
+        "menu_items":[
+            {"name":"Margherita Pizza","price":"Rs.250"},
+            {"name":"Veg Burger","price":"Rs.150"},
+            {"name":"Pasta Alfredo","price":"Rs.300"}
+            {"name":"French Fries","price":"Rs.100"},
+        ]
     }
     return render(request, "home/index.html", context)
