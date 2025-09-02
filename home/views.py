@@ -20,3 +20,15 @@ def home(request):
         ]
     }
     return render(request, "home/index.html", context)
+
+    def contact(request):
+        restaurant =
+        Restaurant.objets.first()
+          restaurant_name = restaurant.name
+       if restaurant else "Our Restaurant"
+
+       context = {
+              "restaurant_name":
+          restaurant_name,    
+       }   
+    return render(request, "home/contact.html", context)
