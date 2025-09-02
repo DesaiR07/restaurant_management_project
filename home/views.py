@@ -29,6 +29,8 @@ def home(request):
 
        context = {
               "restaurant_name":
-          restaurant_name,    
+          restaurant_name, 
+              "phone_number":
+          settings.RESTAURANT_PHONE,       
        }   
     return render(request, "home/contact.html", context)
