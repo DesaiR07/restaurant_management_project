@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.conf import settings
 from .models import Restaurant
 
 # Create your views here.
@@ -11,6 +12,11 @@ def home(request):
     context={
         "restaurant_name":
         restaurant_name if restaurant else "Our Restaurant",
+
+        context ={
+            "restaurant_name":
+        restaurant_name,    
+        }
         #Hardcoded menu items
         "menu_items":[
             {"name":"Margherita Pizza","price":"Rs.250"},
@@ -31,11 +37,19 @@ def home(request):
               "restaurant_name":
           restaurant_name, 
               "restaurant_phone":
-          settings.RESTAURANT_PHONE,
+          getattr(settings,"RESTAURANT_PHONE","+912198908870"),
              "restaurant_email":
-          settings.RESTAURANT_EMAIL,
+         getattr("settings.RESTAURANT_EMAIL","support@example.com")
               "restaurant_address":
-           settings.Restaurant_ADDRESS,
+          getattr("settings.Restaurant_ADDRESS","123,Default Street,India"),
                   
-       }   
-    return render(request, "home/contact.html", context)
+       } 
+
+       def reservtions(request):
+        restaurant =
+        Restaurant.objects.first()
+        context = {
+            "restaurant_name":
+       restaurant.name if restaurant else "Our Restaurant"     
+        }  
+    return render(request, "home/reservation.html", context)
