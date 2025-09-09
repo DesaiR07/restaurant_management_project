@@ -1,7 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>{% block title %}{% endblock %}</title>
+    {% extends "base.html" %}
+    <title>{% block title %}Reservations{% endblock %}</title>
+
+    {% block content %}
+    <h2 class="section-title">Reservations</h2>
+    <p>Reservation functionality coming soon....</p>
+    {% endblock %}
+
     <style>
         body {
               font-family:Arial,sans-serief;
@@ -84,6 +91,7 @@
             <a href="/">Home</a>
             <a href="/about">About</a>
             <a href="/contact">Contact</a>
+            <a href="/reservations">Reservations</a>
 
             </nav> 
     </header>
