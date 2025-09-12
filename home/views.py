@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.conf import settings
 from .models import Restaurant
+import datetime
 
 # Create your views here.
 def about(request):
@@ -42,6 +43,7 @@ def home(request):
          getattr("settings.RESTAURANT_EMAIL","support@example.com")
               "restaurant_address":
           getattr("settings.Restaurant_ADDRESS","123,Default Street,India"),
+               "now":datetime.datetime.now(), #Adding new
                   
        } 
 
