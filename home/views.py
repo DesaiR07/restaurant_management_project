@@ -24,7 +24,8 @@ def home(request):
             {"name":"Veg Burger","price":"Rs.150"},
             {"name":"Pasta Alfredo","price":"Rs.300"}
             {"name":"French Fries","price":"Rs.100"},
-        ]
+        ],
+        "restaurant_logo":"/static/images/logo.png" #adding logo path
     }
     return render(request, "home/index.html", context)
 
@@ -54,4 +55,4 @@ def home(request):
             "restaurant_name":
        restaurant.name if restaurant else "Our Restaurant"     
         }  
-    return render(request, "home/reservation.html", context)
+    return render(request, "home/index.html", context)
