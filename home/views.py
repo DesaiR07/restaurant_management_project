@@ -14,6 +14,7 @@ def home(request):
         "restaurant_name":
         restaurant_name if restaurant else "Our Restaurant",
 
+
         context ={
             "restaurant_name":
         restaurant_name,    
@@ -34,6 +35,9 @@ def home(request):
         Restaurant.objets.first()
           restaurant_name = restaurant.name
        if restaurant else "Our Restaurant"
+       except Exception as e:
+        restaurant_name = "Our Restaurant"
+        print(f"Error fetching restaurant data:{e}")#Handled database or unexpected errors gracefully.
 
        context = {
               "restaurant_name":
